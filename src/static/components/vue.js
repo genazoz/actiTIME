@@ -21,6 +21,9 @@ var router = new VueRouter({
         {   
             path: '*',
             component: Home,
+            meta: {
+                title: 'Features actiTIME'
+            },
         },
     ]
 });
