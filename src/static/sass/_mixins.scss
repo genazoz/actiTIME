@@ -1,0 +1,50 @@
+@mixin backgroundCC(){
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@mixin wrapper(){
+    width: 87%;
+    max-width: 1320px;
+    @include for-size(desktop){
+        width: calc(100% - 32px * 2);
+    }
+    @include for-size(phone-only){
+        width: calc(100% - 24px * 2);
+    }
+}
+
+@mixin textClip(){
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@mixin textSize(){
+    font-size: $font-size*.9;
+    @include for-size(phone-only){
+        font-size: $font-size*1;
+    }
+    @include for-size(big-desktop-up){
+        font-size: $font-size*1.05;
+    }
+    @include for-size(full-hd){
+    font-size: $font-size*1.15;
+    }
+}
+@mixin flexCenter(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin animation($content) {
+    animation: $content;
+    -moz-animation: $content;
+    -webkit-animation: $content;
+  }
+  
+  @mixin keyframes($name) {
+    @keyframes #{$name} { @content; }
+    @-moz-keyframes #{$name} { @content; }
+    @-webkit-keyframes #{$name} { @content; }
+  }
+  
